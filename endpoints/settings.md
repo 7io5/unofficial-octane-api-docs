@@ -41,3 +41,15 @@ Response: not captured.
 Returns the authenticated user's private server invite privacy setting.
 
 Response: not captured.
+
+## GET /account/settings/countries
+
+Returns the list of selectable countries.
+
+Response: not captured.
+
+## GET /account/settings/settings-groups
+
+Returns the account settings groups.
+
+Response: not captured.
