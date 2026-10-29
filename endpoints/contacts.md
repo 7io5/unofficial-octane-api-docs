@@ -2,6 +2,8 @@
 
 ## GET /v1/contacts/metadata
 
+Host: contacts.octane.wtf
+
 Returns contact metadata limits.
 
 Response (captured):
