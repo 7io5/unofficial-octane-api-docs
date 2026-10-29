@@ -2,6 +2,8 @@
 
 ## GET /v1/groups/{groupId}
 
+Host: groups.octane.wtf
+
 Returns group details.
 
 Response (captured):
@@ -87,6 +89,40 @@ Response (captured):
       ]
     }
 
+## GET /v1/groups/{groupId}/roles/{roleId}/users
+
+Returns users in a group role.
+
+Query params: cursor, limit, sortOrder.
+
+Response (captured):
+
+    {
+      "nextPageCursor": null,
+      "previousPageCursor": null,
+      "data": [
+        {
+          "roleId": 2424,
+          "buildersClubMembershipType": "None",
+          "userId": 1655,
+          "username": "o8asob",
+          "displayName": "vicoisconfused"
+        }
+      ]
+    }
+
+## GET /v1/groups/{groupId}/social-links
+
+Returns social links for a group.
+
+Response: not captured.
+
+## GET /v1/groups/{groupId}/payouts
+
+Returns group payout info.
+
+Response: not captured.
+
 ## GET /v1/groups/metadata
 
 Returns group limits and flags.
@@ -104,24 +140,6 @@ Response (captured):
       "isGroupDetailsPolicyEnabled": true
     }
 
-## GET /v1/groups/{groupId}/roles/{roleId}/users
-
-Returns users in a group role.
-
-Response: not captured.
-
-## GET /v1/groups/{groupId}/social-links
-
-Returns social links for a group.
-
-Response: not captured.
-
-## GET /v1/groups/{groupId}/payouts
-
-Returns group payout info.
-
-Response: not captured.
-
 ## GET /v1/groups/search
 
 Searches groups.
@@ -134,16 +152,162 @@ Response: not captured.
 
 Returns a user's main group role.
 
-Response: not captured.
+Response (captured):
+
+    {
+      "role": {
+        "id": 2426,
+        "groupId": 548,
+        "name": "Owner",
+        "description": "The extension's creator.",
+        "rank": 255,
+        "memberCount": 1
+      },
+      "group": {
+        "id": 548,
+        "name": "Nexus - Octane Extension",
+        "description": "nexus is made by zyko. it is open source and free to use. \r\n\r\nlink: https://github.com/zykieboi/nexus",
+        "owner": {
+          "buildersClubMembershipType": "None",
+          "userId": 1043,
+          "username": "Zyko",
+          "displayName": "OnlyTwentyCharacters"
+        },
+        "memberCount": 21,
+        "isLocked": false,
+        "hasVerifiedBadge": false,
+        "isBuildersClubOnly": false,
+        "publicEntryAllowed": true
+      }
+    }
 
 ## GET /v1/users/{userId}/groups/roles
 
 Returns all group roles for a user.
 
-Response: not captured.
+Response (captured):
+
+    {
+      "data": [
+        {
+          "role": {
+            "id": 2426,
+            "groupId": 548,
+            "name": "Owner",
+            "description": "The extension's creator.",
+            "rank": 255,
+            "memberCount": 1
+          },
+          "group": {
+            "id": 548,
+            "name": "Nexus - Octane Extension",
+            "description": "nexus is made by zyko. it is open source and free to use.",
+            "owner": {
+              "buildersClubMembershipType": "None",
+              "userId": 1043,
+              "username": "Zyko",
+              "displayName": "OnlyTwentyCharacters"
+            },
+            "memberCount": 21,
+            "isLocked": false,
+            "hasVerifiedBadge": false,
+            "isBuildersClubOnly": false,
+            "publicEntryAllowed": true
+          }
+        }
+      ]
+    }
 
 ## GET /v2/groups/{groupId}/wall/posts
 
 Returns group wall posts.
 
+Query params: cursor, limit, sortOrder.
+
+Response (captured):
+
+    {
+      "nextPageCursor": null,
+      "previousPageCursor": null,
+      "data": [
+        {
+          "id": 2847,
+          "poster": {
+            "user": {
+              "buildersClubMembershipType": "None",
+              "userId": 1043,
+              "username": "Zyko",
+              "displayName": "OnlyTwentyCharacters"
+            },
+            "role": {
+              "id": 0,
+              "groupId": 0,
+              "name": "Owner",
+              "description": "The extension's creator.",
+              "rank": 255,
+              "memberCount": 1
+            }
+          },
+          "body": "stop acting like nora bro",
+          "created": "2026-10-17T08:46:42.528324Z",
+          "updated": "2026-10-17T08:46:42.528324Z"
+        }
+      ]
+    }
+
+## POST /v1/groups/{groupId}/wall/posts
+
+Creates a wall post in a group.
+
+Response (captured, 403 when no token):
+
+    {
+      "errors": [
+        {
+          "code": 0,
+          "message": "Token Validation Failed"
+        }
+      ]
+    }
+
+## DELETE /v1/groups/{groupId}/wall/posts/{postId}
+
+Deletes a wall post.
+
 Response: not captured.
+
+## GET /apisite/groups/v1/groups/{groupId}
+
+Host: octane.wtf
+
+Returns group details including shout.
+
+Response (captured):
+
+    {
+      "id": 548,
+      "name": "Nexus - Octane Extension",
+      "description": "nexus is made by zyko. it is open source and free to use. \r\n\r\nlink: https://github.com/zykieboi/nexus",
+      "memberCount": 21,
+      "owner": {
+        "buildersClubMembershipType": "None",
+        "userId": 1043,
+        "username": "Zyko",
+        "displayName": "OnlyTwentyCharacters"
+      },
+      "shout": {
+        "poster": {
+          "buildersClubMembershipType": "None",
+          "userId": 1043,
+          "username": "Zyko",
+          "displayName": "OnlyTwentyCharacters"
+        },
+        "body": "Nexus+ is now released for 150 robux and requires a key for access.",
+        "created": "2026-10-22T14:43:42.38157Z",
+        "updated": "2026-10-22T14:43:42.38157Z"
+      },
+      "isBuildersClubOnly": false,
+      "publicEntryAllowed": true,
+      "isLocked": false,
+      "hasVerifiedBadge": false
+    }
