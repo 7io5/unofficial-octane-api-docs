@@ -2,6 +2,8 @@
 
 ## GET /v1/privacy
 
+Host: octane.wtf
+
 Returns the authenticated user's privacy settings.
 
 Response (captured):
