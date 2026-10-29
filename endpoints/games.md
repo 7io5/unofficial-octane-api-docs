@@ -2,6 +2,8 @@
 
 ## GET /v1/games
 
+Host: games.octane.wtf
+
 Returns details for multiple universes.
 
 Query params: universeIds.
@@ -9,7 +11,41 @@ Query params: universeIds.
 Response (captured):
 
     {
-      "data": []
+      "data": [
+        {
+          "id": 29626,
+          "rootPlaceId": 409001,
+          "name": "Zyko's Place Number 4",
+          "description": null,
+          "sourceName": "Zyko's Place Number 4",
+          "sourceDescription": "",
+          "creator": {
+            "id": 1043,
+            "name": "Zyko",
+            "type": "User",
+            "isRNVAccount": false,
+            "hasVerifiedBadge": false
+          },
+          "price": null,
+          "allowedGearGenres": ["All"],
+          "allowedGearCategories": [],
+          "isGenreEnforced": true,
+          "copyingAllowed": false,
+          "playing": 0,
+          "visits": 0,
+          "maxPlayers": 10,
+          "created": "2026-10-28T17:11:37.171443Z",
+          "updated": "2026-10-28T17:11:37.171443Z",
+          "studioAccessToApisAllowed": false,
+          "createVipServersAllowed": false,
+          "privateServerPrice": null,
+          "universeAvatarType": "PlayerChoice",
+          "genre": "All",
+          "isAllGenre": true,
+          "isFavoritedByUser": false,
+          "favoritedCount": 0
+        }
+      ]
     }
 
 ## GET /v1/games/list
@@ -38,7 +74,17 @@ Returns vote data for multiple universes.
 
 Query params: universeIds. Required, otherwise returns 400.
 
-Response: not captured.
+Response (captured):
+
+    {
+      "data": [
+        {
+          "id": 29626,
+          "upVotes": 0,
+          "downVotes": 0
+        }
+      ]
+    }
 
 ## GET /v1/games/multiget-place-details
 
@@ -72,7 +118,28 @@ Response: not captured.
 
 Returns games made by a user.
 
-Response: not captured.
+Query params: limit.
+
+Response (captured):
+
+    {
+      "nextPageCursor": null,
+      "previousPageCursor": null,
+      "data": [
+        {
+          "id": 29626,
+          "name": "Zyko's Place Number 4",
+          "description": null,
+          "rootPlace": {
+            "id": 409001,
+            "type": "Place"
+          },
+          "created": "2026-10-28T17:11:37.171443Z",
+          "updated": "2026-10-28T17:11:37.171443Z",
+          "placeVisits": 0
+        }
+      ]
+    }
 
 ## GET /v2/groups/{groupId}/games
 
