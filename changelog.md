@@ -2,6 +2,93 @@
 
 All notable changes to the Octane API Docs.
 
+## v1.5 — Third Capture
+
+Corrected existing endpoints with real data:
+
+**Account Information**
+- Added `isUserBlockEndpointsUpdated` to `/v1/metadata`
+- Added `promotionChannelsVisibilityPrivacy` to `/v1/promotion-channels`
+
+**Chat**
+- Full `/v2/metadata` feature flags
+- Captured `/v2/get-user-conversations` (raw array, not wrapped)
+- Captured `/v2/multi-get-latest-messages` (raw array, not wrapped)
+
+**Games**
+- Captured `/v1/games`
+- Captured `/v1/games/votes`
+- Captured `/v2/users/{userId}/games`
+
+**Groups**
+- Captured `/v1/groups/{groupId}/roles/{roleId}/users`
+- Captured `/v1/users/{userId}/groups/primary/role`
+- Captured `/v1/users/{userId}/groups/roles`
+- Captured `/v2/groups/{groupId}/wall/posts`
+
+**Locale**
+- Captured `/v1/locales/user-localization-locus-supported-locales`
+
+**Notifications**
+- Captured `/notifications/negotiate`
+- Captured `/notifications/start`
+
+**Trades**
+- Captured `/v1/trades/inbound`
+- Captured `/v1/trades/outbound`
+- Captured `/v1/trades/inactive`
+- Captured `/v1/trades/{tradeId}`
+
+**Users**
+- Captured `/apisite/users/v1/users/{userId}/status`
+- Captured `/apisite/users/v1/users/{userId}/username-history`
+
+**Legacy**
+- Captured `/my/settings/json`
+- Captured `/comments/get-json`
+- Captured `/users/favorites/list-json`
+- Captured `/users/profile/playerassets-json`
+- Captured `/users/profile/robloxcollections-json`
+- Noted `/recipe` returns 404 HTML, not a real API response
+
+Added new endpoints:
+
+**APIs**
+- `GET /v1/discord/status`
+- `GET /v1/two-step-verification/status`
+- `GET /universal-app-configuration/v1/behaviors/account-settings-ui/content`
+
+**Asset Game**
+- `POST /game/report-event`
+
+**Captcha**
+- `GET /v1/captcha/metadata`
+
+**TCDN**
+- `GET /{hash}`
+- `GET /asset_{assetId}_{version}_thumbnail3d.json`
+
+**Asset Thumbnail 3D**
+- `GET /asset-thumbnail-3d/json`
+
+**Account Settings (host)**
+- `GET /v1/app-chat-privacy`
+
+**Realtime**
+- `GET /notifications/negotiate`
+- `GET /notifications/start`
+- `POST /notifications/abort`
+- `WS /notifications/connect`
+
+**CDN CGI**
+- `POST /cdn-cgi/rum`
+- `BEACON /cdn-cgi/rum`
+
+**Referral**
+- `GET /referral/v1/me`
+- `POST /referral/v1/me`
+- `DELETE /referral/v1/me`
+
 ## v1.4 — Notes
 
 - Added disclaimer that docs are not the full API and not official
@@ -61,11 +148,13 @@ First version built from the page capture log. Covered account info, avatar, bad
 ## Still Missing
 
 - Most POST/PATCH/DELETE response bodies
-- Trades responses
 - Presence responses
-- Notifications negotiate/start/abort responses
 - Most catalog search responses
 - Badges responses
-- Groups search / role users / social-links / payouts
+- Groups search / social-links / payouts
 - Games details / place details / playability / favorites / social-links / media
-- Chat conversations / messages
+- Chat get-messages / send-message / typing-status responses
+- Friends unfriend, get-tags responses
+- Home updatestatus response
+- Private messages responses
+- Referral responses
