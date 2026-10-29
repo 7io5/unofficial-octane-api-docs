@@ -6,9 +6,8 @@ This is not official and not the full api. It only covers endpoints that have be
 
 ## What's here
 
-- `endpoints/` — One file per api category
-- `captures/` — Raw json capture logs, named by date
-- `changelog.md` — All-time changelog of what was added
+- `endpoints/` — One file per api category,
+- `changelog.md` — All-time changelog of what was added,
 - `scripts/test-endpoints.js` — Browser console script to test GET endpoints
 
 ## Contributing
