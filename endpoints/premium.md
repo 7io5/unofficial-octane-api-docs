@@ -2,6 +2,8 @@
 
 ## GET /v1/users/{userId}/subscriptions
 
+Host: premiumfeatures.octane.wtf
+
 Returns premium subscription info for a user.
 
 Response (captured):
