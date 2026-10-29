@@ -2,11 +2,45 @@
 
 ## GET /v1/assets
 
+Host: thumbnails.octane.wtf
+
 Returns thumbnails for assets.
 
 Query params: assetIds, format, size, returnPolicy.
 
-Response: not captured.
+Response (captured):
+
+    {
+      "data": [
+        {
+          "targetId": 492,
+          "state": "Completed",
+          "imageUrl": "https://tcdn.octane.wtf/23086666b0bb5c07b3b4deb02b22ed8bddc77f9b7538c4234d79987cbe14a066.png",
+          "version": ""
+        }
+      ]
+    }
+
+## GET /apisite/thumbnails/v1/assets
+
+Host: octane.wtf
+
+Returns thumbnails for assets.
+
+Query params: assetIds, format, size, returnPolicy.
+
+Response (captured):
+
+    {
+      "data": [
+        {
+          "targetId": 410241,
+          "state": "Completed",
+          "imageUrl": "https://tcdn.octane.wtf/65e6506073309ccbc74e529cfefe3ea525f20ccc5bf1da94641681b08043f0ee.png",
+          "version": ""
+        }
+      ]
+    }
 
 ## GET /v1/badges/icons
 
@@ -18,18 +52,7 @@ Response: not captured.
 
 Returns game icons.
 
-Response (captured):
-
-    {
-      "data": [
-        {
-          "targetId": 25070,
-          "state": "Completed",
-          "imageUrl": "https://tcdn.octane.wtf/66d4eb2385a666a2fca63ecef8910236381b4d53411cfbf057237673d1c6b296.png",
-          "version": "TN3"
-        }
-      ]
-    }
+Response: not captured.
 
 ## GET /v1/games/multiget/thumbnail
 
@@ -46,9 +69,15 @@ Response (captured):
     {
       "data": [
         {
-          "targetId": 906,
+          "targetId": 548,
           "state": "Completed",
-          "imageUrl": "https://tcdn.octane.wtf/be4d44d06459f4b901662152a8dbb8409033e80ce5b75e9aca8a6aef53a819db.png",
+          "imageUrl": "https://tcdn.octane.wtf/3d69f2ea973a702cf6605ad066ccc3b0d6c7295d6d399f3212c24c79524de52d.png",
+          "version": ""
+        },
+        {
+          "targetId": 623,
+          "state": "Completed",
+          "imageUrl": "https://tcdn.octane.wtf/3f27c9e0c69b82f8cb8ff19c6f11612c6e0c01bf1a64d29a6a076a366a1bb46f.png",
           "version": ""
         }
       ]
@@ -69,9 +98,9 @@ Response (captured):
     {
       "data": [
         {
-          "targetId": 1224,
+          "targetId": 1043,
           "state": "Completed",
-          "imageUrl": "https://tcdn.octane.wtf/5f6bc4d177be4104270bfa338e84dca93260c423d20513569f550461633b1d72_thumbnail.png",
+          "imageUrl": "https://tcdn.octane.wtf/0412799a09373f3852b700370dfe795f937b766b44d4eaec71fab85a66f4f766_thumbnail.png",
           "version": ""
         }
       ]
@@ -86,9 +115,28 @@ Response (captured):
     {
       "data": [
         {
-          "targetId": 1224,
+          "targetId": 1043,
           "state": "Completed",
-          "imageUrl": "https://tcdn.octane.wtf/5f6bc4d177be4104270bfa338e84dca93260c423d20513569f550461633b1d72_headshot2.png",
+          "imageUrl": "https://tcdn.octane.wtf/0412799a09373f3852b700370dfe795f937b766b44d4eaec71fab85a66f4f766_headshot2.png",
+          "version": ""
+        }
+      ]
+    }
+
+## GET /apisite/thumbnails/v1/users/avatar-headshot
+
+Host: octane.wtf
+
+Returns headshot thumbnails.
+
+Response (captured):
+
+    {
+      "data": [
+        {
+          "targetId": 1043,
+          "state": "Completed",
+          "imageUrl": "https://tcdn.octane.wtf/0412799a09373f3852b700370dfe795f937b766b44d4eaec71fab85a66f4f766_headshot2.png",
           "version": ""
         }
       ]
