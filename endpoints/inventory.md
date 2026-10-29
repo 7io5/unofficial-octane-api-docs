@@ -2,6 +2,8 @@
 
 ## GET /v1/users/{userId}/assets/collectibles
 
+Host: inventory.octane.wtf
+
 Returns collectible assets a user owns.
 
 Query params: assetType, cursor, limit, sortOrder.
@@ -13,15 +15,15 @@ Response (captured):
       "previousPageCursor": null,
       "data": [
         {
-          "userAssetId": 981367,
-          "serialNumber": null,
-          "assetId": 348649,
-          "recentAveragePrice": 113,
-          "originalPrice": 20,
+          "userAssetId": 1044290,
+          "serialNumber": 101,
+          "assetId": 398944,
+          "recentAveragePrice": 246,
+          "originalPrice": 35,
           "serialCount": null,
-          "assetStock": 160,
-          "assetTypeId": "Hat",
-          "name": "Halloween Santa Hat"
+          "assetStock": 205,
+          "assetTypeId": "Face",
+          "name": "Red Fang"
         }
       ]
     }
@@ -34,7 +36,9 @@ Response: not captured.
 
 ## GET /v2/assets/{assetId}/owners
 
-Returns the owner list for an asset. Hosted on inventory.octane.wtf.
+Host: inventory.octane.wtf
+
+Returns the owner list for an asset.
 
 Query params: limit, cursor.
 
@@ -56,4 +60,18 @@ Response (captured):
           "updated": "2026-09-30T18:17:51.374546Z"
         }
       ]
+    }
+
+## GET /apisite/inventory/v1/users/{userId}/items/Asset/{assetId}
+
+Host: octane.wtf
+
+Returns whether a user owns a specific asset.
+
+Response (captured):
+
+    {
+      "nextPageCursor": null,
+      "previousPageCursor": null,
+      "data": []
     }
