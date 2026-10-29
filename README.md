@@ -1,14 +1,13 @@
-# Octane API Docs
+# Octomons API Docs
 
-API Documentation for Octane.
+API Documentation for Octomons.
 
 This is not official and not the full api. It only covers endpoints that have been captured or confirmed. Some responses are marked "not captured" because no data has been collected for them yet.
 
 ## What's here
 
 - `endpoints/` — One file per api category,
-- `changelog.md` — All-time changelog of what was added,
-- `scripts/test-endpoints.js` — Browser console script to test GET endpoints
+- `changelog.md` — All-time changelog of what was added
 
 ## Contributing
 
