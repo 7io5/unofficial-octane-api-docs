@@ -2,6 +2,8 @@
 
 ## GET /v1/locales
 
+Host: locale.octane.wtf
+
 Returns available locales.
 
 Response (captured):
@@ -30,6 +32,45 @@ Response (captured):
 
 ## GET /v1/locales/user-localization-locus-supported-locales
 
-Returns supported locales for the authenticated user.
+Returns supported locales for the authenticated user, split by context.
 
-Response: not captured.
+Response (captured):
+
+    {
+      "signupAndLogin": {
+        "id": 1,
+        "locale": "en_us",
+        "name": "English(US)",
+        "nativeName": "English",
+        "language": {
+          "id": 41,
+          "name": "English",
+          "nativeName": "English",
+          "languageCode": "en"
+        }
+      },
+      "generalExperience": {
+        "id": 1,
+        "locale": "en_us",
+        "name": "English(US)",
+        "nativeName": "English",
+        "language": {
+          "id": 41,
+          "name": "English",
+          "nativeName": "English",
+          "languageCode": "en"
+        }
+      },
+      "ugc": {
+        "id": 1,
+        "locale": "en_us",
+        "name": "English(US)",
+        "nativeName": "English",
+        "language": {
+          "id": 41,
+          "name": "English",
+          "nativeName": "English",
+          "languageCode": "en"
+        }
+      }
+    }
